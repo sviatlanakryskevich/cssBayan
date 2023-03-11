@@ -34,7 +34,7 @@ h2 {
 
 .wrapper__cards {
     cursor: pointer;
-    transition: 0.5 all;
+    transition: 5s all;
 }
 
 .wrapper__cards .pressure__hidden {
@@ -53,18 +53,22 @@ h2 {
 
 .meme__card:hover .meme__image {
     transition: 1s all;
-    display: block;
+    height: 600px;
     margin: 0 auto;
     margin-bottom: 50px;
 }
 
-#test {
+input.meme__radio {
     display: none;
 }
 
-#test:checked+label.meme__card .meme__image {
+label.meme__card {
+    cursor: pointer;
+}
+
+input.meme__radio:checked+label.meme__card:not(hover) .meme__image {
     transition: 1s all;
-    display: block;
+    height: 600px;
     margin: 0 auto;
     margin-bottom: 50px;
 }
@@ -72,6 +76,30 @@ h2 {
 .meme__card:hover h2 {
     transition: 1s all;
     color: #000;
+}
+
+.meme__card:active h2 {
+    color: #0000ff !important;
+}
+
+input.meme__radio:checked+label.meme__card:not(hover) h2 {
+    color: #000;
+}
+
+.meme__card:active {
+    opacity: 0.8;
+}
+
+.meme__card:active .pressure__hidden .expanded {
+    display: none;
+}
+
+.meme__card:active .close {
+    display: block;
+}
+
+.pressure__hidden .close {
+    display: none;
 }
 
 .meme__card img.collapsed {
@@ -107,8 +135,15 @@ h2 {
     width: 100%;
 }
 
+.meme__card {
+    min-height: 600px;
+}
+
 .meme__image {
-    display: none;
+    transition: 2s all;
+    display: block;
     width: 700px;
-    height: 600px;
+    height: 0px;
+    margin: 0 auto;
+    margin-bottom: 50px;
 }
