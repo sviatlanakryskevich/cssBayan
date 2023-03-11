@@ -29,7 +29,7 @@ hr {
 
 h2 {
     font-size: 25px;
-    color: blue;
+    color: #0000ff;
 }
 
 .wrapper__cards {
@@ -52,6 +52,17 @@ h2 {
 }
 
 .meme__card:hover .meme__image {
+    transition: 1s all;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 50px;
+}
+
+#test {
+    display: none;
+}
+
+#test:checked+label.meme__card .meme__image {
     transition: 1s all;
     display: block;
     margin: 0 auto;
